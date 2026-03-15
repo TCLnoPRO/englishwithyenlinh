@@ -97,7 +97,7 @@ font-size:18px;
 <body>
 
 <header>
-🌍 English Learning
+🌍 English With ÉngLinh
 </header>
 
 <div class="container" id="login">
@@ -161,11 +161,11 @@ a:1
 {
 q:"School means?",
 o:["Trường","Sách","Nhà","Vườn"],
-a:1
+a:0
 },{
 q:"Love means?",
 o:["Tình yêu","Chia tay","Nắm tay","Vết xước"],
-a:1
+a:0
 },{
 q:"Cute means?",
 o:["Đáng yêu","Dễ thương","Xinh đẹp","Lung linh"],
@@ -173,19 +173,19 @@ a:1
 },{
 q:"Laugh means?",
 o:["Cười","Khóc","Giận","Dỗi"],
-a:1
+a:0
 },{
 q:"Teacher means?",
 o:["Giáo viên","Học sinh","Bảo vệ","Phụ Hồ"],
-a:1
+a:0
 },{
 q:"Sugar means?",
 o:["Đường","Muối","Cà phê","Thuốc lá"],
-a:1
+a:0
 },{
 q:"Exit sign means?",
 o:["Biển thoát hiểm","Biển báo","Cửa ra vào","Emchimatdimotthangthatbai, conanhmatdinguoiyeuanh"],
-a:1
+a:0
 },
 {
 q:"Hello means?",
@@ -195,7 +195,7 @@ a:0
 {
 q:"Who is the most beautiful?",
 o:["Yến Linh","Linh Đỗ",],
-a:1
+a:[0,1]
 }
 
 ]
@@ -253,7 +253,7 @@ function answer(i,el){
 
 let q=lessons[current]
 
-if(i==q.a){
+if(Array.isArray(q.a) ? q.a.includes(i) : i==q.a){
 
 el.classList.add("correct")
 
